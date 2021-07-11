@@ -137,10 +137,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PhoneBookModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DomainModel\PhoneBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhoneBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DomainModel\PhoneBookModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PhoneBookModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DomainModel\TblUser.cs">
+      <DependentUpon>PhoneBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +164,12 @@
     <Content Include="Models\DomainModel\PhoneBookModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PhoneBookModel.Context.cs</LastGenOutput>
+      <DependentUpon>PhoneBookModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DomainModel\PhoneBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhoneBookModel.edmx</DependentUpon>
+      <LastGenOutput>PhoneBookModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,9 +177,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PhoneBookModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\DomainModel\PhoneBookModel.edmx.diagram">
+    <Content Include="Models\DomainModel\PhoneBookModel.edmx.diagram">
       <DependentUpon>PhoneBookModel.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
