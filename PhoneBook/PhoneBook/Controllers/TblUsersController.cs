@@ -123,5 +123,26 @@ namespace PhoneBook.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Search(string NationalCode)
+        {
+            if (string.IsNullOrEmpty(NationalCode))
+            {
+                ViewBag.Message = "کد ملی خالی نمی تواند باشد.";
+                return View();
+            }
+            List<TblUser> users= db.TblUsers.Where(t => t.NationalCode.Contains(NationalCode.Trim())).ToList();
+            return View(users);
+        }
+
+
+
     }
 }
