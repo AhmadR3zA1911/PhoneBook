@@ -151,6 +151,7 @@
     <Compile Include="Models\DomainModel\TblUser.cs">
       <DependentUpon>PhoneBookModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EntityModels\TblUserMetaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
