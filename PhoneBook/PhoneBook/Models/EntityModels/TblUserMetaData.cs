@@ -28,8 +28,10 @@ namespace PhoneBook.Models.EntityModels
         [Display(Name = "گروه")]
         [Required(ErrorMessage = "گروه را وارد کنید")]
         public string cGroup { get; set; }
-        [Display(Name = "عکس")]
+        [Display(Name = "کدعکس")]
         public byte[] Picture { get; set; }
+        [Display(Name = "تصویر")]
+        public string ImageName { get; set; }
     }
 }
 

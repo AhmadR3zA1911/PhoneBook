@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PhoneBookDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PhoneBookDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblUser">
           <Key>
             <PropertyRef Name="ID" />
@@ -17,12 +17,12 @@
           <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
           <Property Name="cGroup" Type="nvarchar" MaxLength="50" />
           <Property Name="Picture" Type="binary" MaxLength="50" />
+          <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="PhoneBookDBModelStoreContainer">
           <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PhoneBookDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -38,6 +38,7 @@
           <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="cGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Picture" Type="Binary" MaxLength="50" FixedLength="true" />
+          <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="PhoneBookDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
@@ -51,6 +52,7 @@
           <EntitySetMapping Name="TblUsers">
             <EntityTypeMapping TypeName="PhoneBookDBModel.TblUser">
               <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Firstname" ColumnName="Firstname" />
                 <ScalarProperty Name="Lastname" ColumnName="Lastname" />

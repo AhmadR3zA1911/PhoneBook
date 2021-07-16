@@ -22,5 +22,6 @@ namespace PhoneBook.Models.DomainModel
         public string NationalCode { get; set; }
         public string cGroup { get; set; }
         public byte[] Picture { get; set; }
+        public string ImageName { get; set; }
     }
 }
