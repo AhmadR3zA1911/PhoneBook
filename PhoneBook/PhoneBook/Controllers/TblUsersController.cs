@@ -97,8 +97,25 @@ namespace PhoneBook.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser)
+        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser, HttpPostedFileBase UploadImage)
         {
+            //Image Upload
+            if (UploadImage != null)
+            {
+                if (UploadImage.ContentLength > 0)
+                {
+                    //check Extension
+                    string ext = Path.GetExtension(UploadImage.FileName.ToLower());
+                    if (ext == ".jpg" || ext == ".png" || ext == ".jpeg")
+                    {
+                        tblUser.ImageName = UploadImage.FileName;
+                        string Pict = Path.GetFileName(UploadImage.FileName);
+                        string path = Path.Combine(Server.MapPath("~/Images/"), Pict);
+                        UploadImage.SaveAs(path);
+
+                    }
+                }
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(tblUser).State = EntityState.Modified;
