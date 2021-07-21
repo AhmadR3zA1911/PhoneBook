@@ -13,6 +13,13 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+        <dd>
+            <img src="~/Images/@Model.ImageName" style="width:150px;height:150px" />
+
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Firstname)
         </dt>
 
