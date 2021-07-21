@@ -12,6 +12,7 @@
     <Property Name="NationalCode" Type="nvarchar" MaxLength="10" />
     <Property Name="cGroup" Type="nvarchar" MaxLength="50" />
     <Property Name="Picture" Type="binary" MaxLength="50" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="PhoneBookDBModelStoreContainer">
     <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />

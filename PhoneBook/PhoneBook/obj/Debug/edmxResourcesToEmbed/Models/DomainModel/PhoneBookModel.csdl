@@ -12,6 +12,7 @@
     <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="cGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Picture" Type="Binary" MaxLength="50" FixedLength="true" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="PhoneBookDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TblUsers" EntityType="Self.TblUser" />

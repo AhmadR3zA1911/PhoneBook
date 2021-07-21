@@ -4,6 +4,7 @@
     <EntitySetMapping Name="TblUsers">
       <EntityTypeMapping TypeName="PhoneBookDBModel.TblUser">
         <MappingFragment StoreEntitySet="TblUser">
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Firstname" ColumnName="Firstname" />
           <ScalarProperty Name="Lastname" ColumnName="Lastname" />

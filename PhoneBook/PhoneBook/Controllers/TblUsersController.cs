@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,8 +47,26 @@ namespace PhoneBook.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture")] TblUser tblUser) // send user info to db
+        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser,HttpPostedFileBase UploadImage) // send user info to db
         {
+            //Image Upload
+            if (UploadImage!=null)
+            {
+                if (UploadImage.ContentLength>0)
+                {
+                    //check Extension
+                    string ext = Path.GetExtension(UploadImage.FileName.ToLower());
+                    if (ext==".jpg" || ext==".png" || ext==".jpeg")
+                    {
+                        tblUser.ImageName = UploadImage.FileName;
+                        string Pict = Path.GetFileName(UploadImage.FileName);
+                        string path = Path.Combine(Server.MapPath("~/Images/"), Pict);
+                        UploadImage.SaveAs(path);
+
+                    }
+                }
+            }    
+
             if (ModelState.IsValid)
             {
                 db.TblUsers.Add(tblUser);
@@ -78,7 +97,7 @@ namespace PhoneBook.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture")] TblUser tblUser)
+        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser)
         {
             if (ModelState.IsValid)
             {
