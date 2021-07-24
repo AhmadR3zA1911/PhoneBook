@@ -81,7 +81,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="حذف" class="btn btn-default" /> |
+            <input type="submit" value="حذف" class="btn btn-primary" /> |
+            
+        </div>
+        <div class="btn btn-outline-warning">
             @Html.ActionLink("بازگشت به لیست", "Index")
         </div>
     }

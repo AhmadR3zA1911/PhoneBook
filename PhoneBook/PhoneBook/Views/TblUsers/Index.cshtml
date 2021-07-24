@@ -7,10 +7,18 @@
 }
 
 <h2>لیست مخاطبین</h2>
-
+<div class="headerlinks">
+    <span class="addBtn">
+    @Html.ActionLink("افزودن", "Create") 
+    </span>
+    <span class="searcbtn">
+        @Html.ActionLink("جست و جو", "Search")
+    </span>   
+</div>
 <p>
-    @Html.ActionLink("افزودن", "Create")
+    
 </p>
+
 <table class="table">
     <tr>
         <th>

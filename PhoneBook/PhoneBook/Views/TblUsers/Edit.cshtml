@@ -1,11 +1,11 @@
 ﻿@model PhoneBook.Models.DomainModel.TblUser
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "ویرایش فرد";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>ویرایش مخاطب</h2>
 
 
 @using (Html.BeginForm("Edit", "TblUsers", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>TblUser</h4>
+    <h4>با کلیک روی ذخیره ویرایش اطلاعات به روز می شود</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.ID)
@@ -87,14 +87,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="ذخیره ویرایش" class="btn btn-success" />
         </div>
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="btn btn-outline-warning">
+    @Html.ActionLink("بازگشت به لیست", "Index")
 </div>
 
 @section Scripts {
