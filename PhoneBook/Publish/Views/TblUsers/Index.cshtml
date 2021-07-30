@@ -1,0 +1,98 @@
+﻿@model IEnumerable<PhoneBook.Models.DomainModel.TblUser>
+
+@{
+    ViewBag.Title = "لیست مخاطبین";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int Counter = 1;
+}
+
+<h2>لیست مخاطبین</h2>
+<div class="headerlinks">
+    <span class="addBtn">
+    @Html.ActionLink("افزودن", "Create") 
+    </span>
+    <span class="searcbtn">
+        @Html.ActionLink("جست و جو", "Search")
+    </span>   
+</div>
+<p>
+    
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            ردیف
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NationalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cGroup)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Descriptions)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Counter
+    </td>
+    <td>
+        <img src="~/Images/@item.ImageName" style="width:50px;height:50px" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Firstname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lastname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mobile)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PhoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NationalCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.cGroup)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.Picture)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Descriptions)
+    </td>
+    <td>
+        @Html.ActionLink("ویرایش", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("جزئیات", "Details", new { id = item.ID }) |
+        @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+    </td>
+</tr>
+    Counter++;
+}
+
+</table>

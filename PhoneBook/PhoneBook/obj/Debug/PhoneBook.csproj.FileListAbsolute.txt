@@ -80,4 +80,3 @@ G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.Cor
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.CopyComplete
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.dll
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.pdb
-G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.AssemblyReference.cache

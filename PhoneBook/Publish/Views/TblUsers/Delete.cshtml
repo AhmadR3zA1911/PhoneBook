@@ -1,0 +1,96 @@
+﻿@model PhoneBook.Models.DomainModel.TblUser
+
+@{
+    ViewBag.Title = "حذف از لیست";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>آیا مخاطب کامل حذف گردد؟</h3>
+<div>
+    <h4>جزییات مخاطب</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+        <dd>
+            <img src="~/Images/@Model.ImageName" style="width:150px;height:150px" />
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NationalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cGroup)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.Descriptions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descriptions)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-primary" /> |
+            
+        </div>
+        <div class="btn btn-outline-warning">
+            @Html.ActionLink("بازگشت به لیست", "Index")
+        </div>
+    }
+</div>
