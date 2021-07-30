@@ -1,7 +1,15 @@
-﻿body {
+﻿
+@font-face {
+    font-family: 'Vazir-Regular-FD';
+    src: url('/fonts/Vazir-Regular-FD.woff2') format('woff2'), url('/fonts/Vazir-Regular-FD.eot') format('embedded-opentype'), url('/fonts/Vazir-Regular-FD.ttf') format('truetype'), url('/fonts/Vazir-Regular-FD.woff') format('woff');
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family:Vazir-Regular-FD,Tahoma;
 }
+
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -68,3 +76,12 @@ textarea {
         border-width:2px;
     }
 
+.btnSearch
+{
+    margin:10px 1px !important;
+}
+
+#Descriptions {
+    height: 120px;
+    width: 31%;
+}

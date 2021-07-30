@@ -47,8 +47,10 @@ namespace PhoneBook.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser,HttpPostedFileBase UploadImage) // send user info to db
+        public ActionResult Create([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,ImageName,Descriptions")] TblUser tblUser,HttpPostedFileBase UploadImage) // send user info to db
         {
+            string gid = Guid.NewGuid().ToString();
+
             //Image Upload
             if (UploadImage!=null)
             {
@@ -58,8 +60,10 @@ namespace PhoneBook.Controllers
                     string ext = Path.GetExtension(UploadImage.FileName.ToLower());
                     if (ext==".jpg" || ext==".png" || ext==".jpeg")
                     {
-                        tblUser.ImageName = UploadImage.FileName;
+                        //tblUser.ImageName = UploadImage.FileName;
                         string Pict = Path.GetFileName(UploadImage.FileName);
+                        Pict = Pict + "_" + gid + ext;
+                        tblUser.ImageName = Pict;
                         string path = Path.Combine(Server.MapPath("~/Images/"), Pict);
                         UploadImage.SaveAs(path);
 
@@ -97,8 +101,9 @@ namespace PhoneBook.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,Picture,ImageName")] TblUser tblUser, HttpPostedFileBase UploadImage)
+        public ActionResult Edit([Bind(Include = "ID,Firstname,Lastname,Mobile,PhoneNumber,NationalCode,cGroup,ImageName,Descriptions")] TblUser tblUser, HttpPostedFileBase UploadImage)
         {
+            string gid = Guid.NewGuid().ToString();
             //Image Upload
             if (UploadImage != null)
             {
@@ -108,8 +113,10 @@ namespace PhoneBook.Controllers
                     string ext = Path.GetExtension(UploadImage.FileName.ToLower());
                     if (ext == ".jpg" || ext == ".png" || ext == ".jpeg")
                     {
-                        tblUser.ImageName = UploadImage.FileName;
-                        string Pict = Path.GetFileName(UploadImage.FileName);
+                        //tblUser.ImageName =  UploadImage.FileName;
+                        string Pict = Path.GetFileNameWithoutExtension(UploadImage.FileName);
+                        Pict = Pict + "_" + gid + ext;
+                        tblUser.ImageName = Pict;
                         string path = Path.Combine(Server.MapPath("~/Images/"), Pict);
                         UploadImage.SaveAs(path);
 
@@ -171,10 +178,12 @@ namespace PhoneBook.Controllers
         {
             if (string.IsNullOrEmpty(NationalCode))
             {
-                ViewBag.Message = "کد ملی خالی نمی تواند باشد.";
+                ViewBag.Message = "قسمت جست و جو خالی نمی تواند باشد.";
                 return View();
             }
-            List<TblUser> users= db.TblUsers.Where(t => t.NationalCode.Contains(NationalCode.Trim())).ToList();
+            List<TblUser> users= db.TblUsers.Where(t => t.NationalCode.Contains(NationalCode.Trim()) 
+                                                     || t.Lastname.Contains(NationalCode.Trim())
+                                                     || t.Mobile.Contains(NationalCode.Trim())).ToList();
             return View(users);
         }
 

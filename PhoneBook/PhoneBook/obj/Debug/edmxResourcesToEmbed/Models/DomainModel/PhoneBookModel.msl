@@ -3,16 +3,16 @@
   <EntityContainerMapping StorageEntityContainer="PhoneBookDBModelStoreContainer" CdmEntityContainer="PhoneBookDBEntities">
     <EntitySetMapping Name="TblUsers">
       <EntityTypeMapping TypeName="PhoneBookDBModel.TblUser">
-        <MappingFragment StoreEntitySet="TblUser">
+        <MappingFragment StoreEntitySet="TblUsers">
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
           <ScalarProperty Name="ImageName" ColumnName="ImageName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
-          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
           <ScalarProperty Name="cGroup" ColumnName="cGroup" />
-          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

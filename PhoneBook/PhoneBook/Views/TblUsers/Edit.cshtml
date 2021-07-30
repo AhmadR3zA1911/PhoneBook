@@ -66,13 +66,13 @@
         </div>
     </div>
 
-    <div class="form-group">
+    @*<div class="form-group">
         @Html.LabelFor(model => model.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
         </div>
-    </div>
+    </div>*@
 
     @Html.HiddenFor(model => model.ImageName)
     <div class="form-group">
@@ -86,17 +86,24 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="ذخیره ویرایش" class="btn btn-success" />
+        @Html.LabelFor(model => model.Descriptions, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Descriptions, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
         </div>
     </div>
-</div>
-}
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ذخیره ویرایش" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+    }
 
-<div class="btn btn-outline-warning">
-    @Html.ActionLink("بازگشت به لیست", "Index")
-</div>
+    <div class="btn btn-outline-warning">
+        @Html.ActionLink("بازگشت به لیست", "Index")
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

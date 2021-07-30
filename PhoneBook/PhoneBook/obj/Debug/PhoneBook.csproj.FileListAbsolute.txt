@@ -76,8 +76,8 @@ G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\bin\System.Web.WebPages.Razor.
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\bin\Newtonsoft.Json.xml
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\bin\Antlr3.Runtime.pdb
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.AssemblyReference.cache
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.CoreCompileInputs.cache
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.CopyComplete
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.dll
 G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.pdb
+G:\Git\MyRepository\PhoneBook\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csproj.AssemblyReference.cache

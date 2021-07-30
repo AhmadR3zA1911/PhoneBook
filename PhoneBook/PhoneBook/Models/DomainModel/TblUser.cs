@@ -21,7 +21,7 @@ namespace PhoneBook.Models.DomainModel
         public string PhoneNumber { get; set; }
         public string NationalCode { get; set; }
         public string cGroup { get; set; }
-        public byte[] Picture { get; set; }
         public string ImageName { get; set; }
+        public string Descriptions { get; set; }
     }
 }

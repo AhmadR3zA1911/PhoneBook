@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PhoneBookDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PhoneBookDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblUsers" EntityType="PhoneBookDBModel.TblUser" />
+  </EntityContainer>
   <EntityType Name="TblUser">
     <Key>
       <PropertyRef Name="ID" />
@@ -11,10 +14,7 @@
     <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
     <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="cGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Picture" Type="Binary" MaxLength="50" FixedLength="true" />
-    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="PhoneBookDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
-  </EntityContainer>
 </Schema>
